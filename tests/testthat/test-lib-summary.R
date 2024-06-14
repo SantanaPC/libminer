@@ -16,3 +16,5 @@ test_that("sizes argument works", {
   expect_equal(names(res), c("Library", "n_packages", "lib_size"))
   expect_type(res$lib_size, "double")
 })
+
+

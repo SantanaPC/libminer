@@ -1,4 +1,4 @@
-#' Provides a brief summary of the package libraries on your machine - PamPam!
+#' Provides a brief summary of the package libraries on your machine
 #'
 #' @param sizes Should the sizes of the libraries be calculated?
 #'   Logical; default `FALSE`.
@@ -17,9 +17,12 @@ lib_summary <- function(sizes = FALSE) {
   names(pkg_df) <- c("Library", "n_packages")
 
   if (sizes) {
-    pkg_df$lib_size <- map_dbl(
+    pkg_df$lib_size <- vapply(
       pkg_df$Library,
-      ~ sum(fs::file_size(fs::dir_ls(.x, recurse = TRUE)))
+      function(x) {
+        sum(fs::file_size(fs::dir_ls(x, recurse = TRUE)))
+      },
+      FUN.VALUE = numeric(1)
     )
   }
   pkg_df

@@ -2,7 +2,7 @@
 % Please edit documentation in R/lib-summary.R
 \name{lib_summary}
 \alias{lib_summary}
-\title{Provides a brief summary of the package libraries on your machine - PamPam!}
+\title{Provides a brief summary of the package libraries on your machine}
 \usage{
 lib_summary(sizes = FALSE)
 }
@@ -15,7 +15,7 @@ A data.frame containing the count of packages in each of the user's
 libraries. A \code{lib_size} column is included if \code{sizes = TRUE}.
 }
 \description{
-Provides a brief summary of the package libraries on your machine - PamPam!
+Provides a brief summary of the package libraries on your machine
 }
 \examples{
 lib_summary()
